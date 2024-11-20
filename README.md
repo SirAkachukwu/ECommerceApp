@@ -41,9 +41,9 @@ We welcome contributions to EcomEaseAPI. If you're interested in adding new feat
 Once the API is running, you can use the Swagger UI or Postman to interact with the endpoints. The API documentation is available for quick reference.
 
 ## Collaboration Guidelines:
-- **Use descriptive commit messages.
-- **Open an issue for any bug or feature request before working on it.
-- **Follow coding standards and write unit tests for new functionalities.
+- **Use descriptive commit messages.**
+- **Open an issue for any bug or feature request before working on it.**
+- **Follow coding standards and write unit tests for new functionalities.**
 
 ## License:
 This project is licensed under the MIT License.
