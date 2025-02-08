@@ -1,8 +1,12 @@
 using CommerceApp.Data;
 using CommerceApp.Models.AuthModels;
+using CommerceApp.Repositories.AuthRepository;
+using CommerceApp.Repositories.EmailServiceRepository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -52,6 +56,18 @@ builder.Services.AddAuthentication(options =>
 });
 
 builder.Services.AddControllers();
+builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+
+builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
+builder.Services.AddSingleton(sp =>
+{
+    var smtpSettings = sp.GetRequiredService<IOptions<SmtpSettings>>().Value;
+    return smtpSettings;
+});
+
+builder.Services.AddScoped<EmailService>();
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

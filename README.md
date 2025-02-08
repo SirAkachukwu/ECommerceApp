@@ -20,7 +20,7 @@ To get started with the project, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/EcomEaseAPI.git
+   git clone https://github.com/SirAkachukwu/EcommerceApp.git
 
 2. **Install dependencies:**
 - **Ensure you have the latest version of .NET installed.**
